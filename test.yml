@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  become: true
+  tasks:
+    - name: Test Ansible
+      shell: echo hello
+      register: result  # store the result into a variable called "result"
+    - debug: var=result.stdout_lines
